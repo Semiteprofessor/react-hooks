@@ -1,0 +1,33 @@
+/** @format */
+
+.container {
+	align-items: center;
+	justify-content: center;
+}
+
+.container .toggle {
+	text-align: center;
+	font-size: 10rem;
+}
+
+.container .bottom {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+}
+
+.container .bottom .card {
+	padding: 1rem;
+	height: 23vh;
+	width: 20vw;
+	border-radius: 5px;
+	border: 1px solid #d3d3d3;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	text-align: center;
+}
+
+.container .pagination{
+    text-align: center;
+    margin: 5rem auto;
+}
