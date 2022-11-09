@@ -1,5 +1,6 @@
 /** @format */
 
+import React from "react";
 import "./App.css";
 import Toggle from "./components/useState-Toggle";
 import Count from "./components/useState-Count";
@@ -13,6 +14,19 @@ import peopleReducer from "./context/peopleReducer";
 import { ADD_PERSON } from "./context/types";
 import NewestPerson from "./components/NewPerson";
 import { useReducer } from "react";
+
+import State from "./components/new/useEffect";
+import ComponentC from "./components/new/context/componentC";
+import UserReducer from "./components/new/useReducer";
+
+const user = "Taiwo Olapade";
+const login = {
+	username: "rancho_dev",
+	password: "123456",
+};
+
+export const UserContext = React.createContext();
+export const LoginContext = React.createContext();
 
 function App() {
 	const initialState = {
@@ -42,7 +56,7 @@ function App() {
 			{/* <Count /> */}
 			{/* <Update /> */}
 			{/* <UseReducer /> */}
-			<PeopleContext.Provider value={{ people: state.people, addPerson }}>
+			{/* <PeopleContext.Provider value={{ people: state.people, addPerson }}>
 				<div className="container mt-4">
 					<div className="row">
 						<Form />
@@ -50,7 +64,15 @@ function App() {
 						<NewestPerson />
 					</div>
 				</div>
-			</PeopleContext.Provider>
+			</PeopleContext.Provider> */}
+
+			{/* <UserContext.Provider value={user}>
+				<LoginContext.Provider value={login}>
+					<ComponentC />
+				</LoginContext.Provider>
+			</UserContext.Provider> */}
+
+			<UserReducer />
 		</div>
 	);
 }
