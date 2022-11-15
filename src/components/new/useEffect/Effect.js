@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const State = () => {
+const Effect = () => {
 	const [post, setPost] = useState({});
 	const [id, setId] = useState(1);
 	const [fetchId, setFetchId] = useState(1);
@@ -31,4 +31,4 @@ const State = () => {
 	);
 };
 
-export default State;
+export default Effect;

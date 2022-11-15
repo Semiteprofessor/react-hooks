@@ -15,9 +15,22 @@ import { ADD_PERSON } from "./context/types";
 import NewestPerson from "./components/NewPerson";
 import { useReducer } from "react";
 
-import State from "./components/new/useEffect";
-import ComponentC from "./components/new/context/componentC";
+import State from "./components/new/useEffect/Effect";
+// import ComponentC from "./components/new/context/componentC";
 import UserReducer from "./components/new/useReducer";
+import UseReducer2 from "./components/new/useReducer2";
+import ComponentA from "./components/new/reducer-context/componentA";
+import ComponentB from "./components/new/reducer-context/componentB";
+import ComponentC from "./components/new/reducer-context/componentC";
+import Fetch from "./components/new/fetching-data";
+import FetchingData1 from "./components/new/fetching-data1";
+import ParentComponent from "./components/new/useCallBack/ParentComponent";
+import Counter from "./components/new/useMemo/Counter";
+import Todo from "./components/new/useMemo/Todo";
+import UseState6 from "./components/new/useState/State6";
+import Effect1 from "./components/new/useEffect/Effect1";
+import Effect2 from "./components/new/useEffect/Effect2";
+import Effect3 from "./components/new/useEffect/Effect3";
 
 const user = "Taiwo Olapade";
 const login = {
@@ -27,31 +40,48 @@ const login = {
 
 export const UserContext = React.createContext();
 export const LoginContext = React.createContext();
+export const CountContext = React.createContext();
+
+const initialState = 0;
+const reducer = (state, action) => {
+	switch (action) {
+		case "increment":
+			return state + 1;
+		case "decrement":
+			return state - 1;
+		case "reset":
+			return initialState;
+		default:
+			return state;
+	}
+};
 
 function App() {
-	const initialState = {
-		people: [
-			{
-				firstName: "John",
-				lastName: "Doe",
-			},
-			{
-				firstName: "Jane",
-				lastName: "Doe",
-			},
-		],
-	};
+	// 	const initialState = {
+	// 		people: [
+	// 			{
+	// 				firstName: "John",
+	// 				lastName: "Doe",
+	// 			},
+	// 			{
+	// 				firstName: "Jane",
+	// 				lastName: "Doe",
+	// 			},
+	// 		],
+	// 	};
 
-	const [state, dispatch] = useReducer(peopleReducer, initialState);
+	const [count, dispatch] = useReducer(reducer, initialState);
 
-	const addPerson = (person) => {
-		dispatch({
-			type: ADD_PERSON,
-			payload: person,
-		});
-	};
+	// const [state, dispatch] = useReducer(peopleReducer, initialState);
+
+	// const addPerson = (person) => {
+	// 	dispatch({
+	// 		type: ADD_PERSON,
+	// 		payload: person,
+	// 	});
+	// };
 	return (
-		<div>
+		<div className="App">
 			{/* <Toggle /> */}
 			{/* <Count /> */}
 			{/* <Update /> */}
@@ -72,7 +102,29 @@ function App() {
 				</LoginContext.Provider>
 			</UserContext.Provider> */}
 
-			<UserReducer />
+			{/* <UserReducer /> */}
+			{/* <UseReducer2 /> */}
+
+			{/* <CountContext.Provider
+				value={{
+					countState: count,
+					countDispatch: dispatch,
+				}}>
+				<h1>Count - {count}</h1>
+				<ComponentA />
+				<ComponentB />
+				<ComponentC />
+			</CountContext.Provider> */}
+
+			{/* <FetchingData1 /> */}
+
+			{/* <ParentComponent /> */}
+
+			{/* <Todo /> */}
+			{/* <State7 /> */}
+			{/* <Effect1 /> */}
+			{/* <Effect2 /> */}
+			<Effect3 />
 		</div>
 	);
 }

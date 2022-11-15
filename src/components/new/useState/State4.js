@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const State = () => {
+const State4 = () => {
 	const [count, setCount] = useState(0);
 	const [display, setDisplay] = useState(true);
 
@@ -12,7 +12,7 @@ const State = () => {
 			<button
 				className="btn"
 				onClick={() => {
-                    setCount(count + 1)
+					setCount(count + 1);
 				}}>
 				Increase
 			</button>
@@ -27,4 +27,4 @@ const State = () => {
 	);
 };
 
-export default State;
+export default State4;
