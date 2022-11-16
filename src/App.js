@@ -31,6 +31,12 @@ import UseState6 from "./components/new/useState/State6";
 import Effect1 from "./components/new/useEffect/Effect1";
 import Effect2 from "./components/new/useEffect/Effect2";
 import Effect3 from "./components/new/useEffect/Effect3";
+import Context5 from "./components/new/useContext/Context5";
+import Ref1 from "./components/new/useRef/Ref1";
+import Ref2 from "./components/new/useRef/Ref2";
+import Ref3 from "./components/new/useRef/Ref3";
+import Ref4 from "./components/new/useRef/Ref4";
+import Reducer from "./components/new/useReducer/Reducer";
 
 const user = "Taiwo Olapade";
 const login = {
@@ -124,7 +130,14 @@ function App() {
 			{/* <State7 /> */}
 			{/* <Effect1 /> */}
 			{/* <Effect2 /> */}
-			<Effect3 />
+			{/* <Effect3 /> */}
+			{/* <Context5 /> */}
+			{/* <Ref1 /> */}
+			{/* <Ref2 /> */}
+			{/* <Ref3 /> */}
+			{/* <Ref4 /> */}
+
+			<Reducer />
 		</div>
 	);
 }
